@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CallofCthulthu.Views.NewItemPage"
+             Title="New Item">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+                <ColumnDefinition Width="12.5*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+                <RowDefinition Height="11.1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Left Side Page -->
+            <Label Text="Character Name:" FontSize="Medium" Grid.Column="0" Grid.Row="0" Margin="10,10,0,30" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Name}" TextChanged="Name_TextChanged" x:Name="Name" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+
+            <Label Text="Player Name:" FontSize="Medium" Margin="10,10,0,30" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Player}" TextChanged="Player_TextChanged" x:Name="Play" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand" />
+
+            <Label Text="Age:" FontSize="Medium" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Age}" x:Name="Age" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Stepper Minimum="15" Maximum="100" Increment="1" Value="{Binding Item.Age}" Grid.Column="3" Grid.Row="2" HorizontalOptions="StartAndExpand" Margin="0,10,0,30"/>
+
+            <Label Text="Sex:" FontSize="Medium" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Sex}" x:Name="Sex" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+
+            <Label Text="Occupation:" FontSize="Medium" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Ocu}"  FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+
+            <Label Text="Sanity:" FontSize="Medium" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Res}" x:Name="San" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+
+            <Label Text="MP:" FontSize="Medium" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Bp}" x:Name="Mp" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+ 
+            <Label Text="HP:" FontSize="Medium" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Hp}" x:Name="Hp" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+
+
+            <!-- Right Side Page -->
+            <Label Text="Strength:" FontSize="Medium" Grid.Column="4" Grid.Row="0" Margin="10,10,0,30" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+            <Entry Text ="{Binding Item.Str}" x:Name="Str" FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="0" Margin="30,20,30,30" Clicked="StrButton_Clicked"></Button>
+
+            <Label Text="Constitution:" FontSize="Medium" Margin="10,10,0,30" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Con}" x:Name="Con" FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand" />
+            <Button Grid.Column="7" Grid.Row="1" Margin="30,20,30,30" Clicked="ConButton_Clicked"></Button>
+
+            <Label Text="Size:" FontSize="Medium" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Siz}" x:Name="Siz"  FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="2" Margin="30,20,30,30" Clicked="SizButton_Clicked"></Button>
+
+            <Label Text="Dexterity:" FontSize="Medium" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Dex}" x:Name="Dex" FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="3" Margin="30,20,30,30" Clicked="DexButton_Clicked"></Button>
+
+            <Label Text="Appearence:" FontSize="Medium" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.App}" x:Name="app" FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="4" Margin="30,20,30,30" Clicked="AppButton_Clicked"></Button>
+
+            <Label Text="Intelligence:" FontSize="Medium" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Int}" x:Name="Int"  FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="5" Margin="30,20,30,30" Clicked="IntButton_Clicked"></Button>
+
+            <Label Text="Power" FontSize="Medium" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Pow}" x:Name="Pow" FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="6" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="6" Margin="30,20,30,30" Clicked="PowButton_Clicked"></Button>
+
+            <Label Text="Education" FontSize="Medium" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Edu}" x:Name="Edu" FontSize="Small" Margin="10,10,0,30" Grid.Column="6" Grid.Row="7" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button Grid.Column="7" Grid.Row="7" Margin="30,20,30,30" Clicked="EduButton_Clicked"></Button>
+
+            <Label Text="Luck:" FontSize="Medium" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="1"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="{Binding Item.Luck}" x:Name="Lck" FontSize="Small" Margin="10,10,0,30" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1"  HorizontalOptions="EndAndExpand"/>
+            <Button Grid.Column="5" Grid.Row="8" Margin="30,20,30,30" Clicked="LckButton_Clicked"></Button>
+
+            <Button Grid.Column="7" Grid.Row="8" Margin="10,10,10,10" Clicked="StatButton_Clicked"></Button>
+
+        </Grid>
+        
+   
+    </ContentPage.Content>
+</ContentPage>

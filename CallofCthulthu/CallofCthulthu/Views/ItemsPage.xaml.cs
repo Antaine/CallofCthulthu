@@ -49,5 +49,6 @@ namespace CallofCthulthu.Views
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
+
     }
 }

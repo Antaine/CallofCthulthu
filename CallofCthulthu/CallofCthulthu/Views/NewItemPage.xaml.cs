@@ -54,8 +54,6 @@ namespace CallofCthulthu.Views
 
             };
 
-           // roll2d6();
-
             BindingContext = this;
         }
 
@@ -63,6 +61,7 @@ namespace CallofCthulthu.Views
         {
             MessagingCenter.Send(this, "AddItem", Item);
             await Navigation.PopModalAsync();
+           
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
@@ -304,6 +303,11 @@ namespace CallofCthulthu.Views
             int age = stringToInt(Age.Text);
             Item.Age = age;
 
+        }
+
+        private void saveOcc(object sender, TextChangedEventArgs e)
+        {
+            Item.Ocu = picker.SelectedItem.ToString();
         }
     }
 }

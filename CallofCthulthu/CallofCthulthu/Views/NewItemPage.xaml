@@ -64,7 +64,23 @@
             <Entry Text="{Binding Item.Sex}" x:Name="Sex" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
 
             <Label Text="Occupation:" FontSize="Medium" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
-            <Entry Text="{Binding Item.Ocu}"  FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Picker SelectedIndexChanged="saveOcc" x:Name="picker" Grid.Column="2" Grid.Row="4" Margin="10,10,0,30">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Accountant</x:String>
+                        <x:String>Actor</x:String>
+                        <x:String>Criminal</x:String>
+                        <x:String>Doctor</x:String>
+                        <x:String>Driver</x:String>
+                        <x:String>Farmer</x:String>
+                        <x:String>Lawyer</x:String>
+                        <x:String>Private Investigator</x:String>
+                        <x:String>Soldier</x:String>
+                        <x:String>Spy</x:String>
+                        <x:String>Zookeeper</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
             <Label Text="Sanity:" FontSize="Medium" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"  Margin="10,10,0,30" HorizontalOptions="StartAndExpand"/>
             <Entry Text="{Binding Item.Res}" x:Name="San" FontSize="Small" Margin="10,10,0,30" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>

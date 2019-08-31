@@ -3,10 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CallofCthulthu.Views.ItemDetailPage"
              Title="{Binding Title}">
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
-    </StackLayout>
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Name:" FontSize="Medium" />
+            <Label Text="{Binding Item.Name}" FontSize="Small"/>
+            <Label Text="Player:" FontSize="Medium" />
+            <Label Text="{Binding Item.Player}" FontSize="Small"/>
+            <Label Text="Sex:" FontSize="Medium" />
+            <Label Text="{Binding Item.Sex}" FontSize="Small"/>
+            <Label Text="Occupation:" FontSize="Medium" />
+            <Label Text="{Binding Item.Ocu}" FontSize="Small"/>
+            <Label Text="Hp:" FontSize="Medium" />
+            <Label Text="{Binding Item.Hp}" FontSize="Small"/>
+            <Label Text="Mp:" FontSize="Medium" />
+            <Label Text="{Binding Item.Mp}" FontSize="Small"/>
+            <Label Text="Strength:" FontSize="Medium" />
+            <Label Text="{Binding Item.Str}" FontSize="Small"/>
+            <Label Text="Constitution:" FontSize="Medium" />
+            <Label Text="{Binding Item.Con}" FontSize="Small"/>
+            <Label Text="Size:" FontSize="Medium" />
+            <Label Text="{Binding Item.Siz}" FontSize="Small"/>
+            <Label Text="Dex:" FontSize="Medium" />
+            <Label Text="{Binding Item.Dex}" FontSize="Small"/>
+            <Label Text="Appearence:" FontSize="Medium" />
+            <Label Text="{Binding Item.App}" FontSize="Small"/>
+            <Label Text="Power:" FontSize="Medium" />
+            <Label Text="{Binding Item.Pow}" FontSize="Small"/>
+            <Label Text="Education:" FontSize="Medium" />
+            <Label Text="{Binding Item.Edu}" FontSize="Small"/>
+            <Label Text="Luck:" FontSize="Medium" />
+            <Label Text="{Binding Item.Luck}" FontSize="Small"/>
+            <Label Text="Sanity:" FontSize="Medium" />
+            <Label Text="{Binding Item.Sanity}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

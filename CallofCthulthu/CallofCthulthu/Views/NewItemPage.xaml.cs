@@ -78,7 +78,7 @@ namespace CallofCthulthu.Views
 
         private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            Item.Age = 16;
+            Item.Age += 1;
             Age.Text = Item.Age.ToString();
 
         }
@@ -242,12 +242,14 @@ namespace CallofCthulthu.Views
             int mp = pow;
             mp =  mp/5;
             Mp.Text = mp.ToString();
+            Item.Mp = mp;
         }
 
         private void calculateSanity()
         {
             int sanity = Item.Pow;
             San.Text = sanity.ToString();
+            Item.Sanity = sanity;
         }
 
         private int stringToInt(string stat)

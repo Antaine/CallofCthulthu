@@ -18,8 +18,8 @@ namespace CallofCthulthu.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Home" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="Roll" },
+                new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
+                new HomeMenuItem {Id = MenuItemType.Rolls, Title="Roll" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="Create Character" }
             };
 

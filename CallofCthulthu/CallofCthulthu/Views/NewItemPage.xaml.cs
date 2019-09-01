@@ -17,12 +17,6 @@ namespace CallofCthulthu.Views
 
         Random dice = new Random();
 
-        public void get_Roll(object btn)
-        {
-            var b = (Button)btn;
-            Item.Str = dice.Next(1, 7);
-        }
-
         public NewItemPage()
         {
             InitializeComponent();
@@ -222,8 +216,7 @@ namespace CallofCthulthu.Views
 
         private void calculateMp()
         {
-            int pow = Item.Pow
-;
+            int pow = Item.Pow;
 
             int mp = pow;
             mp =  mp/5;

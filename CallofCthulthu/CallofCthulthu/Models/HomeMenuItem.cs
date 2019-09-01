@@ -7,7 +7,7 @@ namespace CallofCthulthu.Models
     public enum MenuItemType
     {
         Home,
-        Rolls,
+        Roll,
         About
     }
     public class HomeMenuItem

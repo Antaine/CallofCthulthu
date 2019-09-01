@@ -6,6 +6,7 @@
 
     <!-- Character Details -->
     <ScrollView>
+
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name:" FontSize="Medium" />
             <Label Text="{Binding Item.Name}" FontSize="Small"/>
@@ -39,6 +40,18 @@
             <Label Text="{Binding Item.Sanity}" FontSize="Small"/>
             <Label Text="Occupation Points:" FontSize="Medium" />
             <Label Text="{Binding Item.OcuPoint}" FontSize="Small"/>
+            
+            <!-- Dice Rolls-->
+            <Label Text="Dice" FontSize="Large"></Label>
+            <!-- D100 Roll-->
+            <Button Clicked="RollD100" HeightRequest="20"></Button>
+            <Label Text="D100 Roll:" x:Name="D100"></Label>
+            <!-- D10 -->
+            <Button Clicked="RollD10" HeightRequest="20"></Button>
+            <Label Text="D10 Roll:" x:Name="D10"></Label>
+            <!-- D6 -->
+            <Button Clicked="RollD6" HeightRequest="20"></Button>
+            <Label Text="D6 Roll:" x:Name="D6"></Label>
         </StackLayout>
     </ScrollView>
 </ContentPage>

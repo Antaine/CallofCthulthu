@@ -13,22 +13,6 @@ namespace CallofCthulthu.Views
     public partial class NewItemPage : ContentPage , INotifyPropertyChanged
     {
         public Item Item { get; set; }
-        private string strRoll;
-        public string StrRoll
-        {
-            get
-            {
-                return strRoll;
-            }
-            set
-            {
-                if (strRoll != value)
-                {
-                    strRoll = value;
-                    this.OnPropertyChanged("Rolled");
-                }
-            }
-        }
 
 
         Random dice = new Random();

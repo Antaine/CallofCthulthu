@@ -20,7 +20,7 @@ namespace CallofCthulthu.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
                 new HomeMenuItem {Id = MenuItemType.Rolls, Title="Roll" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="Create Character" }
+                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

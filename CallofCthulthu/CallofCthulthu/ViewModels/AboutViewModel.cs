@@ -11,7 +11,7 @@ namespace CallofCthulthu.ViewModels
         {
             Title = "About";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://en.wikipedia.org/wiki/Call_of_Cthulhu_%28role-playing_game%29")));
         }
 
         public ICommand OpenWebCommand { get; }

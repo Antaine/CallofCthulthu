@@ -4,6 +4,7 @@
              x:Class="CallofCthulthu.Views.ItemDetailPage"
              Title="{Binding Title}">
 
+    <!-- Character Details -->
     <ScrollView>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name:" FontSize="Medium" />

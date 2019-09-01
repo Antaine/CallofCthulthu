@@ -23,7 +23,7 @@
     
     <ContentPage.Content>
         <Grid>
-
+                <!-- Definition -->
             <Grid.ColumnDefinitions>
 
                 <ColumnDefinition Width="12.5*"></ColumnDefinition>

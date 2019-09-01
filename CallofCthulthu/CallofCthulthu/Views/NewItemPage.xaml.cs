@@ -158,6 +158,7 @@ namespace CallofCthulthu.Views
             int roll = roll2d6();
             Int.Text = roll.ToString();
             Item.Int = roll;
+            calculateHobby();
         }
 
         private void PowButton_Clicked(object sender, EventArgs e)
@@ -218,6 +219,8 @@ namespace CallofCthulthu.Views
             calculateHp();
             calculateMp();
             calculateSanity();
+            calculateHobby();
+            
             saveFacts();
         }
 
@@ -349,7 +352,7 @@ namespace CallofCthulthu.Views
 
             else if(i == 1)
             {
-                points = ((Item.Edu * 2) + Item.App * 2);
+                points = (Item.Edu * 2) + (Item.App * 2);
                 Item.CrMin = 9;
                 Item.CrMax = 40;
             }
@@ -402,8 +405,7 @@ namespace CallofCthulthu.Views
             {
                 points = Item.Edu * 4;
                 Item.CrMin = 30;
-                Item.CrMax = 80;
-            }
+                Item.CrMax = 80;            }
 
             else if (i == 7)
             {
@@ -422,10 +424,10 @@ namespace CallofCthulthu.Views
 
             else if (i == 8)
             {
-                int bigStat = appOrDex();
+                int bigStat = dexOrStr();
                 if (bigStat == 0)
                 {
-                    points = ((Item.Edu * 2) + Item.App * 2);
+                    points = ((Item.Edu * 2) + Item.Str * 2);
                 }
                 else
                 {
@@ -447,8 +449,15 @@ namespace CallofCthulthu.Views
                 points = 55;
             }
 
+            
             return points;
 
+        }
+
+        private void calculateHobby()
+        {
+            int hobby = Item.Int * 2;
+            Item.HobbyPoint = hobby;
         }
     }
 }

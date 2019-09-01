@@ -18,6 +18,8 @@ namespace CallofCthulthu.Models
         public int CrMin { get; set; }
         public int CrMax { get; set; }
         public int OcuPoint { get; set; }
+        public int HobbyPoint { get; set; }
+
 
 
 

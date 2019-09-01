@@ -308,6 +308,147 @@ namespace CallofCthulthu.Views
         private void saveOcc(object sender, TextChangedEventArgs e)
         {
             Item.Ocu = picker.SelectedItem.ToString();
+           Item.OcuPoint= calculatePoints(picker.SelectedIndex);
+        }
+
+        private int dexOrStr()
+        {
+            if(Item.Str >= Item.Dex)
+            {
+                return 0;
+            }
+
+            else
+            {
+                return 1;
+            }
+        }
+
+        private int appOrDex()
+        {
+            if (Item.App >= Item.Dex)
+            {
+                return 0;
+            }
+
+            else
+            {
+                return 1;
+            }
+        }
+
+        private int calculatePoints(int i)
+        {
+            int points = 0;
+            if (i == 0)
+            {
+                points = Item.Edu * 4;
+                Item.CrMin = 30;
+                Item.CrMax = 70;
+            }
+
+            else if(i == 1)
+            {
+                points = ((Item.Edu * 2) + Item.App * 2);
+                Item.CrMin = 9;
+                Item.CrMax = 40;
+            }
+
+            else if (i == 2)
+            {
+                points = ((Item.Edu * 2) + Item.Str * 2);
+                Item.CrMin = 5;
+                Item.CrMax = 30;
+            }
+
+            else if (i == 3)
+            {
+                points = Item.Edu * 4;
+                Item.CrMin = 30;
+                Item.CrMax = 80;
+            }
+
+            else if (i == 4)
+            {
+                int bigStat = dexOrStr();
+                if(bigStat == 0)
+                {
+                    points = ((Item.Edu * 2) + Item.Str * 2);
+                }
+                else
+                {
+                    points = ((Item.Edu * 2) + Item.Dex * 2);
+                }
+                Item.CrMin = 9;
+                Item.CrMax = 20;
+            }
+
+            else if (i == 5)
+            {
+                int bigStat = dexOrStr();
+                if (bigStat == 0)
+                {
+                    points = ((Item.Edu * 2) + Item.Str * 2);
+                }
+                else
+                {
+                    points = ((Item.Edu * 2) + Item.Dex * 2);
+                }
+                Item.CrMin = 9;
+                Item.CrMax = 30;
+            }
+
+            else if (i == 6)
+            {
+                points = Item.Edu * 4;
+                Item.CrMin = 30;
+                Item.CrMax = 80;
+            }
+
+            else if (i == 7)
+            {
+                int bigStat = dexOrStr();
+                if (bigStat == 0)
+                {
+                    points = ((Item.Edu * 2) + Item.Str * 2);
+                }
+                else
+                {
+                    points = ((Item.Edu * 2) + Item.Dex * 2);
+                }
+                Item.CrMin = 9;
+                Item.CrMax = 30;
+            }
+
+            else if (i == 8)
+            {
+                int bigStat = appOrDex();
+                if (bigStat == 0)
+                {
+                    points = ((Item.Edu * 2) + Item.App * 2);
+                }
+                else
+                {
+                    points = ((Item.Edu * 2) + Item.Dex * 2);
+                }
+                Item.CrMin = 20;
+                Item.CrMax = 60;
+            }
+
+            else if (i == 9)
+            {
+                points = Item.Edu * 4;
+                Item.CrMin = 9;
+                Item.CrMax = 40;
+            }
+
+            else
+            {
+                points = 55;
+            }
+
+            return points;
+
         }
     }
 }

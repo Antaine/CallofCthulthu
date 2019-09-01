@@ -36,6 +36,8 @@
             <Label Text="{Binding Item.Luck}" FontSize="Small"/>
             <Label Text="Sanity:" FontSize="Medium" />
             <Label Text="{Binding Item.Sanity}" FontSize="Small"/>
+            <Label Text="Occupation Points:" FontSize="Medium" />
+            <Label Text="{Binding Item.OcuPoint}" FontSize="Small"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

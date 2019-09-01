@@ -15,6 +15,11 @@ namespace CallofCthulthu.Models
         public string Ocu { get; set; }
         public string Hp { get; set; }
         public int Mp { get; set; }
+        public int CrMin { get; set; }
+        public int CrMax { get; set; }
+        public int OcuPoint { get; set; }
+
+
 
         //Stats
         public int Str { get; set; }

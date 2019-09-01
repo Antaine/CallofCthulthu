@@ -35,6 +35,7 @@ namespace CallofCthulthu.Views
             BindingContext = this;
         }
 
+        //Save
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
@@ -42,24 +43,27 @@ namespace CallofCthulthu.Views
            
         }
 
+        //Cancel
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }
 
-        Stepper stepper = new Stepper
-        {
-            Maximum = 100,
-            Increment = 1
-        };
 
-        private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            Item.Age += 1;
-            Age.Text = Item.Age.ToString();
+        //Stepper stepper = new Stepper
+        //{
+        //    Maximum = 100,
+        //    Increment = 1
+        //};
 
-        }
+        //private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    Item.Age += 1;
+        //    Age.Text = Item.Age.ToString();
 
+        //}
+
+         //Roll 3 D6 
         private int roll3d6()
         {
             int roll = 0;
@@ -73,6 +77,7 @@ namespace CallofCthulthu.Views
             return roll3d6;
         }
 
+        //Roll 2D6
         private int roll2d6()
         {
             int roll = 0;
@@ -87,20 +92,20 @@ namespace CallofCthulthu.Views
             roll2d6 *= 5;
             return roll2d6;
         }
-
+        //RollD6
         private int rolld6()
         {
             int d6 = dice.Next(1, 7);
             return d6;
         }
-
+        //Roll Strength
         private void StrButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll3d6();
             Str.Text = roll.ToString();
             Item.Str = roll;
         }
-
+        //Roll Con
         private void ConButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll3d6();
@@ -108,7 +113,7 @@ namespace CallofCthulthu.Views
             Item.Con = roll;
             calculateHp();
         }
-
+        //Roll Size
         private void SizButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll2d6();
@@ -117,6 +122,7 @@ namespace CallofCthulthu.Views
             calculateHp();
         }
 
+        //Roll Dex
         private void DexButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll3d6();
@@ -124,6 +130,7 @@ namespace CallofCthulthu.Views
             Item.Dex = roll;
         }
 
+        //Roll App
         private void AppButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll3d6();
@@ -131,6 +138,7 @@ namespace CallofCthulthu.Views
             Item.App = roll;
         }
 
+        //Roll Int +6
         private void IntButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll2d6();
@@ -138,7 +146,7 @@ namespace CallofCthulthu.Views
             Item.Int = roll;
             calculateHobby();
         }
-
+        //Roll Pow
         private void PowButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll3d6();
@@ -148,13 +156,14 @@ namespace CallofCthulthu.Views
             calculateSanity();
         }
 
+        //Roll Edu +6
         private void EduButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll2d6();
             Edu.Text = roll.ToString();
             Item.Edu = roll;
         }
-
+        //Roll Luck
         private void LckButton_Clicked(object sender, EventArgs e)
         {
             int roll = roll3d6();
@@ -162,6 +171,7 @@ namespace CallofCthulthu.Views
             Item.Luck = roll;
         }
 
+        //Roll All
         private void StatButton_Clicked(object sender, EventArgs e)
         {
             int strRoll = roll3d6();
@@ -201,7 +211,7 @@ namespace CallofCthulthu.Views
             
             saveFacts();
         }
-
+        //Calculate Hp
         private void calculateHp()
         {
             int siz = stringToInt(Siz.Text);
@@ -214,6 +224,7 @@ namespace CallofCthulthu.Views
             Hp.Text = hp.ToString();
         }
 
+        //Calculate Mp
         private void calculateMp()
         {
             int pow = Item.Pow;
@@ -223,14 +234,14 @@ namespace CallofCthulthu.Views
             Mp.Text = mp.ToString();
             Item.Mp = mp;
         }
-
+        //Calculate Sanity
         private void calculateSanity()
         {
             int sanity = Item.Pow;
             San.Text = sanity.ToString();
             Item.Sanity = sanity;
         }
-
+        //String to int
         private int stringToInt(string stat)
         {
             int num = 0;
@@ -246,7 +257,7 @@ namespace CallofCthulthu.Views
             
             return num;
         }
-
+        //Set Item values
         private void saveFacts()
         {
             string name = Name.Text;
@@ -259,38 +270,39 @@ namespace CallofCthulthu.Views
             Item.Sex = sex;
             Item.Age = age;
         }
-
+        //Save  Name
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
             string name = Name.Text;
             Item.Name = name;
         }
-
+        //Save Player
         private void Player_TextChanged(object sender, TextChangedEventArgs e)
         {
             string player = Play.Text;
             Item.Player = player;
         }
-
+        //Save Sex
         private void Sex_TextChanged(object sender, TextChangedEventArgs e)
         {
             string sex = Sex.Text;
             Item.Sex = Sex.Text;
         }
-
+        //Save Age
         private void Age_TextChanged(object sender, TextChangedEventArgs e)
         {
             int age = stringToInt(Age.Text);
             Item.Age = age;
 
         }
-
+        //Save Occ
         private void saveOcc(object sender, TextChangedEventArgs e)
         {
             Item.Ocu = picker.SelectedItem.ToString();
            Item.OcuPoint= calculatePoints(picker.SelectedIndex);
         }
 
+        //Decide if dex or str is higher
         private int dexOrStr()
         {
             if(Item.Str >= Item.Dex)
@@ -303,7 +315,7 @@ namespace CallofCthulthu.Views
                 return 1;
             }
         }
-
+        //Decide if dex or str is higher
         private int appOrDex()
         {
             if (Item.App >= Item.Dex)
@@ -316,7 +328,8 @@ namespace CallofCthulthu.Views
                 return 1;
             }
         }
-
+        //Calculate Points based on occupation and Stats.
+        //Stats must be picked before Occupation
         private int calculatePoints(int i)
         {
             int points = 0;
@@ -431,6 +444,7 @@ namespace CallofCthulthu.Views
 
         }
 
+        //Calculate Hobby points based on int
         private void calculateHobby()
         {
             int hobby = Item.Int * 2;
